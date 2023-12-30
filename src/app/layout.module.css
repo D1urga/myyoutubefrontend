@@ -1,4 +1,7 @@
 @media screen and (min-width: 900px) {
+  .outer_div {
+    display: flex;
+  }
 }
 @media screen and (max-width: 900px) and (min-width: 520px) {
 }
