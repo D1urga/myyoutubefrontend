@@ -3,10 +3,8 @@
 import styles from "./page.module.css";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useCookies } from "next-client-cookies";
 
 export default function Home() {
-  const cookies = useCookies();
   const router = useRouter();
   const [formData, setFormData] = useState({
     username: "",

@@ -14,12 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <cookieProvider>
-          <div className={styles.outer_div}>
-            <Sidebar />
-            {children}
-          </div>
-        </cookieProvider>
+        <div className={styles.outer_div}>
+          <Sidebar />
+          {children}
+        </div>
       </body>
     </html>
   );
