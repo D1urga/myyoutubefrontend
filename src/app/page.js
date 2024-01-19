@@ -3,6 +3,8 @@
 import styles from "./page.module.css";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Flutter from "./landingPage/page";
+import Testing from "./components/testing";
 
 export default function Home() {
   const router = useRouter();
@@ -14,24 +16,21 @@ export default function Home() {
   const [user, setUser] = useState();
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch(
-      "https://anoop-mytube.onrender.com/api/v1/users/login",
-      {
-        method: "POST",
-        mode: "cors",
-        withCredentials: true,
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-        body: JSON.stringify(formData),
-      }
-    );
+
+    const response = await fetch("http://localhost:3000/api/v1/users/login", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
     const data = await response.json();
 
-    alert(data.data.accessToken);
+    // alert(document.cookie);
 
-    localStorage.setItem("user", response.data);
+    localStorage.setItem("user", data.data);
   };
 
   const handleInputChange = (event) => {
@@ -44,13 +43,14 @@ export default function Home() {
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
     if (loggedInUser) {
-      // const foundUser = JSON.stringify(loggedInUser);
-      // setUser(foundUser);
-      // router.push("/landingPage");
+      const foundUser = JSON.stringify(loggedInUser);
+      setUser(foundUser);
+      router.push("/landingPage");
     }
   }, []);
 
   return (
+    // <Testing />
     <main className={styles.main}>
       <p>SignIn Form</p>
       <form onSubmit={handleSubmit}>

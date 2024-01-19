@@ -1,0 +1,53 @@
+.outer_div {
+  background-color: rgb(255, 255, 255);
+}
+.img_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0px;
+  background-color: #2f2e48;
+  margin: 7px 60px;
+  border-radius: 15px;
+}
+.img {
+  height: 500px;
+  width: 800px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  margin: 5px;
+  height: 50px;
+  width: 700px;
+  border: none;
+  padding: 2px 5px;
+  background-color: #152154;
+  border-radius: 5px;
+  color: white;
+}
+.button {
+  margin: 5px;
+  height: 50px;
+  width: 700px;
+  border: none;
+  padding: 2px 5px;
+  background-color: #152154;
+  border-radius: 5px;
+  color: white;
+}
+.comments_div {
+  max-height: 200px;
+
+  width: 71%;
+  border-radius: 10px;
+  overflow: auto;
+  margin: 10px 0px;
+
+  background-color: #fff;
+}

@@ -1,7 +1,19 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Sidebar from "./components/sidebar";
+
 import styles from "./layout.module.css";
+import Link from "next/link";
+import Image from "next/image";
+import img1 from "./Images/anpic3.jpeg";
+
+import {
+  FaBeer,
+  FaCode,
+  FaConnectdevelop,
+  FaInstagram,
+  FaNodeJs,
+  FaReact,
+} from "react-icons/fa";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +27,54 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <div className={styles.outer_div}>
-          <Sidebar />
-          {children}
+          <div className={styles.sidebar}>
+            <Image
+              src={img1}
+              className={styles.profile}
+              alt="profile"
+              priority={1}
+            />
+
+            <p className={styles.heading}>A Chaudhary </p>
+
+            <div className={styles.link_box}>
+              <Link className={styles.links} href="">
+                <div className={styles.links_div}>
+                  <FaConnectdevelop className={styles.icons} />
+                  <p>Leetcode</p>
+                </div>
+              </Link>
+              <Link className={styles.links} href="">
+                <div className={styles.links_div}>
+                  <FaCode className={styles.icons} />
+                  <p>Flutter</p>
+                </div>
+              </Link>
+              <Link className={styles.links} href="">
+                <div className={styles.links_div}>
+                  <FaNodeJs className={styles.icons} />
+                  <p>Express</p>
+                </div>
+              </Link>
+              <Link className={styles.links} href="">
+                <div className={styles.links_div}>
+                  <FaReact className={styles.icons} />
+                  <p>Next js</p>
+                </div>
+              </Link>
+              <Link className={styles.links} href="">
+                <div className={styles.links_div}>
+                  <FaReact className={styles.icons} />
+                  <p>React js</p>
+                </div>
+              </Link>
+              <div className={styles.contact_div}>
+                <p>Having trouble?</p>
+                <p>Contact us</p>
+              </div>
+            </div>
+          </div>
+          <div className={styles.right_div}>{children}</div>
         </div>
       </body>
     </html>

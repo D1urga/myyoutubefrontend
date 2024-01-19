@@ -2,6 +2,87 @@
   .outer_div {
     display: flex;
   }
+  .profile {
+    margin: 40px 0px 10px 0px;
+    height: 120px;
+    width: 120px;
+
+    object-fit: cover;
+    border-radius: 80px;
+  }
+  .sidebar {
+    width: 15vw;
+    background-color: #2f2e48;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .heading {
+    color: white;
+    font-size: 13px;
+    margin: 15px 0px;
+  }
+  .links {
+    color: white;
+    font-size: 13px;
+    padding: 16px 50px;
+    border-radius: 2px;
+    transition: 200ms ease-in-out;
+  }
+
+  .links:hover {
+    background-color: #163353;
+    transition: 200ms ease-in-out;
+  }
+  .links_div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90px;
+  }
+  .icons {
+    margin: 0px 8px;
+    font-size: 15px;
+  }
+
+  .link_box {
+    width: 100%;
+    height: 100%;
+    background-color: #152154;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 80px;
+  }
+  .contact_div {
+    margin-top: 30px;
+    height: 70px;
+    width: 170px;
+    background-color: #2f2e48;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+  }
+  .contact_div p {
+    font-size: 13px;
+    color: white;
+    margin: 1px 0px;
+  }
+  .right_div {
+    position: relative;
+    right: -15vw;
+    z-index: 1;
+    width: 85vw;
+  }
 }
 @media screen and (max-width: 900px) and (min-width: 520px) {
 }

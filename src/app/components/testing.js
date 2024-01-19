@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import styles from "./flutter.module.css";
+import styles from "../landingPage/flutter.module.css";
 
-export default function Flutter() {
+export default function Testing() {
   const [formData, setFormData] = useState({
     comment: "",
   });
@@ -11,7 +11,7 @@ export default function Flutter() {
     event.preventDefault();
 
     const response = await fetch(
-      `http://localhost:3000/api/v1/comments/postComment/${id}`,
+      `https://anoop-mytube.onrender.com/api/v1/comments/postComment/${id}`,
       {
         method: "POST",
         credentials: "include",
@@ -35,7 +35,7 @@ export default function Flutter() {
   const [data, setData] = useState([]);
   const fetchInfo = async () => {
     const res = await fetch(
-      "http://localhost:3000/api/v1/posts/getposts/6589e2f887ac89a260a3ded5"
+      "https://anoop-mytube.onrender.com/api/v1/posts/getposts/6589e2f887ac89a260a3ded5"
     );
     const d = await res.json();
     return setData(d.data[0].userPosts);
